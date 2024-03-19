@@ -17,7 +17,7 @@ function Top() {
                     <h1 className="text-white text-5xl font-Dirt">ABHIJEET SINGH RANA</h1>
                     <h3 className="text-slate-400 text-2xl md:flex grid">Frontend Developer <span className="text-gray-300 mx-2">|</span> <span className="text-gray-500">Electrical Engineer</span> </h3>
                     <div className="flex justify-center">
-                        <a href="/imgs/myResume.pdf" download={true} target='_blank' className="border-2 cursor-pointer border-sky-700 hover:bg-fuchsia-300 bg-blue-400 p-2 rounded-md flex items-center space-x-3 w-fit" > <BsDownload className=" text-2xl text-red-600 m-3 mr-3 md:m-px" /> <span className=" text-lg font-Shadows font-bold w-fit text-slate-900 m-3 md:m-px">RESUME</span></a>
+                        <a href="/imgs/newResume.pdf" download={true} target='_blank' className="border-2 cursor-pointer border-sky-700 hover:bg-fuchsia-300 bg-blue-400 p-2 rounded-md flex items-center space-x-3 w-fit" > <BsDownload className=" text-2xl text-red-600 m-3 mr-3 md:m-px" /> <span className=" text-lg font-Shadows font-bold w-fit text-slate-900 m-3 md:m-px">RESUME</span></a>
                     </div>
                 </div>
 
