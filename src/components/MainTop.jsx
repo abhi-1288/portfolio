@@ -1,4 +1,4 @@
-import React, { Suspense } from "react"
+import React from "react"
 import { BsDownload } from "react-icons/bs";
 import { types } from "./quotes"
 import SocialLinkWithLabel from "./SocialLinkWithLabel ";
@@ -8,10 +8,8 @@ function Top() {
     return (
         <div name="/">
             <div className="md:flex-row flex flex-col justify-center  space-x-4">
-                <div className="md:w-96 md:h-96 w-full h-72 flex justify-center" id="image">
-                    <Suspense fallback={<Loading />}>
+                <div className="md:w-96 md:h-96 relative w-full h-72 flex justify-center" id="image">
                         <img src="/imgs/profile.png" className="border-0 border-blue-800 h-full shadow-xl shadow-blue-800 rounded-full" alt="user-image" />
-                    </Suspense>
                 </div>
 
                 <div className="flex flex-col justify-center text-center items-center space-y-3 my-3">
