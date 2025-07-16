@@ -6,10 +6,8 @@ import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Projects from './components/assignment/Projects'
 import Nav from './components/Nav'
-import { Route, Routes } from 'react-router-dom';
-import PulltoRefresh from './components/pull-to-refresh/PulltoRefresh';
-import CopyrightPage from './components/CopyrightPage';
-import ContentFormat from './components/assignment/ContentFormat';
+
+
 
 function App() {
 
