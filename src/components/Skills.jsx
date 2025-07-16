@@ -25,7 +25,7 @@ function Skills (){
                         <h1>JAVA-SCRIPT</h1>
                         <h1>REACT</h1>
                         <h1>TYPE-SCRIPT</h1>
-                        <h1></h1>
+                        <h1>Node JS Express</h1>
                     </div>
                 </div>
             </div>

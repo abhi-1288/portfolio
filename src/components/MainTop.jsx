@@ -42,12 +42,12 @@ function Top() {
                     icon="twitter"
                     iconName="Twitter"
                 />
-                <SocialLinkWithLabel
+                {/* <SocialLinkWithLabel
                     href="https://linkedin.com/in/abhijeet-singh-rana-178a4623a"
                     title="Linkedin"
                     icon="linkedin"
                     iconName="LinkedIn"
-                />
+                /> */}
                 <SocialLinkWithLabel
                     href="https://github.com/abhi-1288"
                     title="Github"
