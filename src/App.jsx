@@ -8,7 +8,6 @@ import Projects from './components/assignment/Projects'
 import Nav from './components/Nav'
 
 
-
 function App() {
 
   const [copyright, setCopyright] = useState(false)
@@ -51,3 +50,4 @@ function App() {
 }
 
 export default App
+
