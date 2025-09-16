@@ -2,6 +2,7 @@
   channel = "stable-24.05";
   packages = [
     pkgs.nodejs_20
+    pkgs.yarn
   ];
   idx.extensions = [
     "svelte.svelte-vscode"
@@ -11,8 +12,8 @@
     previews = {
       web = {
         command = [
-          "npm"
-          "run"
+          "yarn"
+          # "run"
           "dev"
           "--"
           "--port"
