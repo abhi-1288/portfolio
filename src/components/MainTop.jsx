@@ -1,6 +1,7 @@
 import React from "react"
 import { BsDownload } from "react-icons/bs";
-import { types } from "./quotes"
+// import { types } from "./quotes"
+import QuoteRotator from "./quotes";
 import SocialLinkWithLabel from "./SocialLinkWithLabel ";
 
 function Top() {
@@ -57,7 +58,7 @@ function Top() {
             </div>
 
             <div id="myQuotes" className="text-center m-4 p-4 " >
-                {types}
+            <QuoteRotator />
             </div>
 
             <div className="grid md:flex justify-center md:space-x-40  p-4 ">

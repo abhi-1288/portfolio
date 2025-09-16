@@ -37,28 +37,26 @@ const quotes = [
 
 
 export default function QuoteRotator() {
-    const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setIndex(prev => (prev + 1) % quotes.length); 
-            // cycles through quotes
-        }, 10000); // 10 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % quotes.length);
+    }, 10000); // 10 sec
+    return () => clearInterval(interval);
+  }, [])
 
-        return () => clearInterval(interval); // cleanup on unmount
-    }, []);
+  const { quote, author } = quotes[index];
 
-    const { quote, author } = quotes[index];
-
-    return (
-        <div id="myQuotes" className="text-center m-4 p-4">
-            <h1 className="text-3xl text-sky-500 font-Pacifico mx-2">
-                “{quote}”
-                <br />
-                <span className="text-xl text-rose-500 font-Marker italic">
-                    - {author}
-                </span>
-            </h1>
-        </div>
-    );
+  return (
+    <div id="myQuotes" className="text-center m-4 p-4">
+      <h1 className="text-3xl text-sky-500 font-Pacifico mx-2">
+        “{quote}”
+        <br />
+        <span className="text-xl text-rose-500 font-Marker italic">
+          - {author}
+        </span>
+      </h1>
+    </div>
+  );
 }
