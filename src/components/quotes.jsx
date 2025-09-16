@@ -1,53 +1,64 @@
-let quotes = [ 
-    {
-        quote: "It’s not a bug. It’s an undocumented feature!",
-        author: "Anonymous"
-    },
-    {
-        quote: "A website without visitors is like a ship lost in the horizon.",
-        author : "Dr. Christopher Dayagdag"
-    },
-    {
-        quote: "A user interface is like a joke. If you have to explain it, it’s not that good.",
-        author : "Unknown"
-    },
-    {
-        quote: "Great web design without functionality is like a sports car with no engine.",
-        author : "Paul Cookson"
-    },
-    {
-        quote: "Things aren’t always #000000 and #FFFFFF",
-        author : "HTML Developer"
-    },
-    {
-        quote: "Software undergoes beta testing shortly before it’s released. Beta is Latin for ‘still doesn’t work.’",
-        author : "Unknown"
-    },
-    {
-        quote: "A website without SEO is like a car with no gas.",
-        author : "Paul Cookson"
-    },
-    {
-        quote: "Responsive Web Design always plays an important role  whenever going to promote your website.",
-        author: "Josh Wilson"
-    },
+import { useState, useEffect } from "react";
+
+const quotes = [
+  {
+    quote: "Code is like humor. When you have to explain it, it’s bad.",
+    author: "Cory House"
+  },
+  {
+    quote: "Simplicity is the soul of efficiency.",
+    author: "Austin Freeman"
+  },
+  {
+    quote: "First, solve the problem. Then, write the code.",
+    author: "John Johnson"
+  },
+  {
+    quote: "Good design is obvious. Great design is transparent.",
+    author: "Joe Sparano"
+  },
+  {
+    quote: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+    author: "Martin Fowler"
+  },
+  {
+    quote: "Experience is the name everyone gives to their mistakes.",
+    author: "Oscar Wilde"
+  },
+  {
+    quote: "Innovation distinguishes between a leader and a follower.",
+    author: "Steve Jobs"
+  },
+  {
+    quote: "Code never lies, comments sometimes do.",
+    author: "Ron Jeffries"
+  }
 ];
 
-// export const writtenQuotes = (quoteArray) => {
-const writtenQuotes = (quoteArray) => {
-    const randomQuotes = Math.floor(Math.random() * (quoteArray.length))
-    let QUOTES = quoteArray[randomQuotes].quote;
-    let AUTHERS = quoteArray[randomQuotes].author;
-    return(
-        <h1 className="text-3xl text-sky-500 font-Pacifico mx-2"> “{QUOTES}” <br /> <span className="text-xl text-rose-500 font-Marker italic"> - {AUTHERS}</span> </h1>
-    )
+
+export default function QuoteRotator() {
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex(prev => (prev + 1) % quotes.length); 
+            // cycles through quotes
+        }, 10000); // 10 seconds
+
+        return () => clearInterval(interval); // cleanup on unmount
+    }, []);
+
+    const { quote, author } = quotes[index];
+
+    return (
+        <div id="myQuotes" className="text-center m-4 p-4">
+            <h1 className="text-3xl text-sky-500 font-Pacifico mx-2">
+                “{quote}”
+                <br />
+                <span className="text-xl text-rose-500 font-Marker italic">
+                    - {author}
+                </span>
+            </h1>
+        </div>
+    );
 }
-
-
-// export const myQuotes = quotes;
-
-export const types = writtenQuotes(quotes)
-
-
-    
-// writtenQuotes(myQuotes)
