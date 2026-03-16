@@ -11,7 +11,8 @@ function Projects() {
                 <ContentFormat part="part-1">
                     <div className="grid h-fit text-xl space-y-3 font-Pacifico text-sky-500 p-2">
                         <h1>1. <a className="underline" target="_blank" href="https://mui-site.vercel.app/">Weather App & more</a></h1>
-                        <h1>1. <a className="underline" target="_blank" href="https://app-qr-code.vercel.app/">QR App- Full Stack</a></h1>
+                        <h1>2. <a className="underline" target="_blank" href="https://app-qr-code.vercel.app/">QR App- Full Stack</a></h1>
+                        <h1>3. <a className="underline" target="_blank" href="https://campus-connect-five-sage.vercel.app//">Campus Connect</a></h1>
                     </div>
                 </ContentFormat>
 

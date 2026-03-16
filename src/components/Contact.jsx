@@ -3,7 +3,7 @@ import { FiMail, FiPhone } from "react-icons/fi"
 
 function Contact (){
     const CONTACT = [
-        {name:"MAIL", link:"mailto:abhijeetsinghrana2003@gmail.com", icon:<FiMail className="text-3xl text-rose-500"/>},
+        {name:"MAIL", link:"mailto:abhijeet.singh.rana@outlook.com", icon:<FiMail className="text-3xl text-rose-500"/>},
         {name:"CALL", link:"tel:+91-9411387408", icon:<FiPhone className="text-3xl text-rose-500"/>},
     ]
     return(

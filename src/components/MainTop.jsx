@@ -7,10 +7,9 @@ import SocialLinkWithLabel from "./SocialLinkWithLabel ";
 function Top() {
 
     return (
-        <div name="/">
-            <div className="md:flex-row flex flex-col justify-center  space-x-4">
+        <div name="/">            <div className="md:flex-row flex flex-col justify-center  space-x-4">
                 <div className="md:w-96 md:h-96 relative w-full h-72 flex justify-center" id="image">
-                        <img src="/imgs/profile.png" className="border-0 border-blue-800 h-full shadow-xl shadow-blue-800 rounded-full" alt="user-image" />
+                        <img src="/imgs/profile_2.png" className="border-0 border-blue-800 h-60 shadow-xl shadow-blue-800 rounded-full" alt="user-image" />
                 </div>
 
                 <div className="flex flex-col justify-center text-center items-center space-y-3 my-3">
