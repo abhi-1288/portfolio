@@ -2,12 +2,15 @@
 module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.jsx",
+    "./src-version-1/**/*.jsx",
+    "./src-version-2/**/*.jsx",
     "*",
   ],
   theme: {
     extend: {
       fontFamily:{
+        display:["Space Grotesk", "sans-serif"],
+        sans:["Inter", "sans-serif"],
         DotGothic16:['Noto Sans Buhid', "sans-serif"],
         RalewayDot:["Raleway Dots", "cursive"],
         Dancing:['Dancing Script', "cursive"],

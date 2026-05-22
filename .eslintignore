@@ -1,0 +1,5 @@
+dist/
+src/
+src-version-1/
+src-version-2/components/
+tailwind.config.js
