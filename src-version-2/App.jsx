@@ -45,6 +45,21 @@ const projects = [
       "A beginner-friendly resume creator focused on quick editing and clear output.",
     tags: ["React", "Forms", "Builder"],
   },
+  {
+    title: "Weather App",
+    type: "Frontend Utility",
+    href: "https://mui-site.vercel.app/",
+    description:
+      "A straightforward weather app that delivers current conditions with a clean design, with data from the OpenWeatherMap API.",
+    tags: ["React", "API", "Utility"],
+  },
+  {
+    title: "Todo App",
+    type: "Frontend App",
+    href: "https://class-based-todo.netlify.app",
+    description: "A simple todo app built with a class-based React approach.",
+    tags: ["React", "JavaScript", "Frontend", "Material UI"],
+  },
 ];
 
 const skills = [
@@ -171,21 +186,93 @@ function App() {
           </div>
 
           <div className="relative min-h-[430px] overflow-visible md:min-h-[500px]">
-            <div className="absolute bottom-0 right-0 h-[360px] w-[320px] rounded-t-[140px] border border-white/10 bg-white/[0.04] md:h-[430px] md:w-[480px]" />
-            <div className="absolute left-0 top-4 z-20 max-w-[280px] rounded-[28px] border border-[#17211f]/10 bg-white px-6 py-5 text-[#17211f] shadow-2xl md:left-2 md:top-8">
+            {/* Animated Background Shape */}
+            <div
+              className="
+      absolute bottom-0 right-0
+      h-[360px] w-[320px]
+      md:h-[430px] md:w-[480px]
+      rounded-t-[140px]
+      border border-white/10
+      overflow-hidden
+      bg-[#182320]
+      shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+    "
+            >
+              {/* Orange Glow */}
+              <div
+                className="
+        absolute left-10 top-16
+        h-40 w-40
+        rounded-full
+        bg-[#e04d2f]/30
+        blur-3xl
+        animate-floatSlow
+      "
+              />
+
+              {/* Green Glow */}
+              <div
+                className="
+        absolute bottom-10 right-10
+        h-44 w-44
+        rounded-full
+        bg-[#54d17a]/20
+        blur-3xl
+        animate-floatSlowReverse
+      "
+              />
+
+              {/* Grid Overlay */}
+              <div
+                className="
+        absolute inset-0
+        opacity-[0.04]
+        bg-[linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)]
+        bg-[size:32px_32px]
+      "
+              />
+            </div>
+
+            {/* Floating Card */}
+            <div
+              className="
+      absolute left-0 top-4 z-20
+      max-w-[280px]
+      rounded-[28px]
+      border border-[#17211f]/10
+      bg-white
+      px-6 py-5
+      text-[#17211f]
+      shadow-2xl
+      md:left-2 md:top-8
+    "
+            >
               <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#e04d2f]">
                 Currently thinking
               </p>
+
               <h3 className="mt-3 text-2xl font-bold leading-tight">
                 Open to Electrical, IT, and frontend roles.
               </h3>
+
               <span className="absolute -bottom-5 right-16 h-6 w-6 rounded-full bg-white shadow-lg" />
               <span className="absolute -bottom-10 right-8 h-3.5 w-3.5 rounded-full bg-white shadow-md" />
             </div>
+
+            {/* Profile Image */}
             <img
               src="/imgs/profile_2.png"
               alt="Abhijeet Singh Rana"
-              className="absolute bottom-0 right-2 z-10 h-[360px] w-auto max-w-full object-contain drop-shadow-2xl md:right-8 md:h-[430px]"
+              loading="lazy"
+              className="
+      absolute bottom-0 right-2 z-10
+      h-[360px]
+      w-auto max-w-full
+      object-contain
+      drop-shadow-[0_30px_50px_rgba(0,0,0,0.45)]
+      md:right-8 md:h-[430px]
+    "
             />
           </div>
         </div>
