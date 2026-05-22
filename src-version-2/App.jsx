@@ -172,41 +172,44 @@ function App() {
 
           <div className="relative min-h-[430px] overflow-visible md:min-h-[500px]">
             <div className="absolute bottom-0 right-0 h-[360px] w-[320px] rounded-t-[140px] border border-white/10 bg-white/[0.04] md:h-[430px] md:w-[480px]" />
-              <div className="absolute left-0 top-4 z-20 max-w-[280px] rounded-[28px] border border-[#17211f]/10 bg-white px-6 py-5 text-[#17211f] shadow-2xl md:left-2 md:top-8">
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#e04d2f]">
-                  Currently thinking
-                </p>
-                <h3 className="mt-3 text-2xl font-bold leading-tight">
-                  Open to Electrical, IT, and frontend roles.
-                </h3>
-                <span className="absolute -bottom-5 right-16 h-6 w-6 rounded-full bg-white shadow-lg" />
-                <span className="absolute -bottom-10 right-8 h-3.5 w-3.5 rounded-full bg-white shadow-md" />
-              </div>
-              <img
-                src="/imgs/profile_2.png"
-                alt="Abhijeet Singh Rana"
-                className="absolute bottom-0 right-2 z-10 h-[360px] w-auto max-w-full object-contain drop-shadow-2xl md:right-8 md:h-[430px]"
-              />
+            <div className="absolute left-0 top-4 z-20 max-w-[280px] rounded-[28px] border border-[#17211f]/10 bg-white px-6 py-5 text-[#17211f] shadow-2xl md:left-2 md:top-8">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#e04d2f]">
+                Currently thinking
+              </p>
+              <h3 className="mt-3 text-2xl font-bold leading-tight">
+                Open to Electrical, IT, and frontend roles.
+              </h3>
+              <span className="absolute -bottom-5 right-16 h-6 w-6 rounded-full bg-white shadow-lg" />
+              <span className="absolute -bottom-10 right-8 h-3.5 w-3.5 rounded-full bg-white shadow-md" />
             </div>
+            <img
+              src="/imgs/profile_2.png"
+              alt="Abhijeet Singh Rana"
+              className="absolute bottom-0 right-2 z-10 h-[360px] w-auto max-w-full object-contain drop-shadow-2xl md:right-8 md:h-[430px]"
+            />
           </div>
+        </div>
       </section>
 
-      <section className="border-y border-[#17211f]/10 bg-white">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px bg-[#17211f]/10 px-5 md:grid-cols-4 md:px-8">
-          {[
-            ["1 Year", "Tata Motors apprenticeship"],
-            ["79%", "Electrical engineering diploma"],
-            ["6+", "Published web projects"],
-            ["NCC C", "Leadership certificate"],
-          ].map(([value, label]) => (
-            <div key={label} className="bg-white py-6">
-              <p className="font-display text-4xl text-[#e04d2f]">{value}</p>
-              <p className="mt-1 text-sm font-medium text-[#17211f]/60">
-                {label}
-              </p>
-            </div>
-          ))}
-        </div>
+      <section className="overflow-hidden border-y border-[#17211f]/10 bg-white">
+        <marquee direction="left" scrollAmount="5" className="py-2">
+          <div className="flex items-center">
+            {[
+              ["1 Year", "Tata Motors apprenticeship"],
+              ["79%", "Electrical engineering diploma"],
+              ["6+", "Published web projects"],
+              ["NCC C", "Leadership certificate"],
+            ].map(([value, label], index) => (
+              <div key={index} className="mx-10 flex min-w-[220px] flex-col">
+                <p className="font-display text-4xl text-[#e04d2f]">{value}</p>
+
+                <p className="mt-1 text-sm font-medium text-[#17211f]/60">
+                  {label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </marquee>
       </section>
 
       <section
