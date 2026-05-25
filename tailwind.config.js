@@ -22,6 +22,7 @@ module.exports = {
         Conflict:['Passions Conflict', "cursive"],
         Dirt: ['Rubik Dirt', "cursive"],
         Marker: ['Permanent Marker', ],
+        DotMatrix:['Dot Matrix', 'cursive'],
         
       },
     },

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Optional: block internal folders if added later
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://portfolio-abhijeet.vercel.app/sitemap.xml

@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import React, { useEffect } from "react";
 import {
   FiArrowUpRight,
   FiAward,
@@ -63,11 +64,14 @@ const projects = [
 ];
 
 const skills = [
+  "Power-BI",
+  "Microsoft Office suites",
   "React",
   "JavaScript",
   "HTML",
   "CSS",
   "Tailwind CSS",
+  "Material UI",
   "Node.js",
   "Express",
   "MongoDB",
@@ -79,6 +83,16 @@ const skills = [
 ];
 
 const experience = [
+  {
+    role: "Contractual Trainee Engineer",
+    org: "Uttarakhand Power Corporation Limited",
+    time: "2025 - Present",
+    points: [
+      "Supported electrical system operations and asset maintenance across distribution and substation infrastructure.",
+      "Coordinated with field teams to inspect transformers, switchgear, and protective relays for safer power delivery.",
+      "Assisted in compiling technical reports and improving workflow documentation for ongoing site projects.",
+    ],
+  },
   {
     role: "Diploma Apprentice Trainee",
     org: "Tata Motors, Pantnagar",
@@ -112,6 +126,9 @@ const certificates = [
   "NCC C Certificate",
 ];
 
+const internship = [
+];
+
 function ExternalLink({ href, children, className = "" }) {
   return (
     <a href={href} target="_blank" rel="noreferrer" className={className}>
@@ -121,6 +138,86 @@ function ExternalLink({ href, children, className = "" }) {
 }
 
 function App() {
+  useEffect(() => {
+    const created = [];
+    const siteUrl = window?.location?.origin || '';
+    const title = 'Abhijeet Singh Rana — Electrical Engineer & Frontend Developer';
+    const description = 'Diploma holder in Electrical Engineering with practical EV platform training and React frontend experience. Open to electrical, IT and frontend roles.';
+
+    document.title = title;
+
+    const createMeta = (attrName, attrValue, content) => {
+      const m = document.createElement('meta');
+      m.setAttribute(attrName, attrValue);
+      m.content = content;
+      m.dataset.generatedBy = 'seo-script';
+      document.head.appendChild(m);
+      created.push(m);
+      return m;
+    };
+
+    // Basic meta
+    createMeta('name', 'description', description);
+    createMeta('name', 'robots', 'index,follow');
+    createMeta('name', 'keywords', 'Electrical Engineer, Frontend Developer, React, Tailwind, EV, Substation');
+
+    // Open Graph
+    createMeta('property', 'og:title', title);
+    createMeta('property', 'og:description', description);
+    createMeta('property', 'og:type', 'website');
+    createMeta('property', 'og:url', siteUrl + window.location.pathname);
+    createMeta('property', 'og:image', siteUrl + '/imgs/profile_2.png');
+
+    // Twitter card
+    createMeta('name', 'twitter:card', 'summary_large_image');
+    createMeta('name', 'twitter:title', title);
+    createMeta('name', 'twitter:description', description);
+
+    // canonical link
+    const link = document.createElement('link');
+    link.rel = 'canonical';
+    link.href = siteUrl + window.location.pathname;
+    link.dataset.generatedBy = 'seo-script';
+    document.head.appendChild(link);
+    created.push(link);
+
+    // JSON-LD structured data (Person + simple workExperience)
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: 'Abhijeet Singh Rana',
+      jobTitle: 'Electrical Engineer & Frontend Developer',
+      url: siteUrl,
+      sameAs: [
+        'https://linkedin.com/in/abhijeet-singh-rana-178a4623a',
+        'https://github.com/abhi-1288',
+      ],
+      worksFor: {
+        '@type': 'Organization',
+        name: internship && internship.length > 0 ? internship[0].split(' at ')[1] || 'Uttarakhand Power Corporation Limited' : 'Independent',
+      },
+      description,
+      knowsAbout: skills,
+      alumniOf: 'Govt. Polytechnic College',
+      workExperience: experience.map((e) => ({
+        '@type': 'Role',
+        roleName: e.role,
+        startDate: e.time,
+        employer: { '@type': 'Organization', name: e.org },
+      })),
+    };
+
+    const ld = document.createElement('script');
+    ld.type = 'application/ld+json';
+    ld.text = JSON.stringify(jsonLd);
+    ld.dataset.generatedBy = 'seo-script';
+    document.head.appendChild(ld);
+    created.push(ld);
+
+    return () => {
+      created.forEach((el) => el.remove());
+    };
+  }, []);
   return (
     <main className="min-h-screen bg-[#f5f1e8] text-[#17211f]">
       <section className="relative overflow-hidden bg-[#17211f] text-white">
@@ -428,11 +525,11 @@ function App() {
       </section>
 
       <section className="bg-white px-5 py-16 md:px-8 md:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2">
+        <div className={`mx-auto grid max-w-7xl gap-10 ${internship && internship.length > 0 ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
           <div className="rounded-lg border border-[#17211f]/12 p-6">
             <FiAward className="text-3xl text-[#e04d2f]" aria-hidden="true" />
             <h2 className="mt-4 font-display text-4xl">Education</h2>
-            <ul className="mt-6 space-y-3 text-[#17211f]/70">
+            <ul className="mt-6 list-disc list-inside space-y-3 text-[#17211f]/70 marker:text-blue-500">
               {education.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -441,12 +538,23 @@ function App() {
           <div className="rounded-lg border border-[#17211f]/12 p-6">
             <FiZap className="text-3xl text-[#e04d2f]" aria-hidden="true" />
             <h2 className="mt-4 font-display text-4xl">Certificates</h2>
-            <ul className="mt-6 space-y-3 text-[#17211f]/70">
+            <ul className="mt-6 list-disc list-inside space-y-3 text-[#17211f]/70 marker:text-blue-500">
               {certificates.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
           </div>
+          {internship && internship.length > 0 && (
+            <div className="rounded-lg border border-[#17211f]/12 p-6">
+              <FiBriefcase className="text-3xl text-[#e04d2f]" aria-hidden="true" />
+              <h2 className="mt-4 font-display text-4xl">Internship</h2>
+              <ul className="mt-6 list-disc list-inside space-y-3 text-[#17211f]/70 marker:text-blue-500">
+                {internship.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </section>
 
