@@ -40,7 +40,7 @@ const projects = [
   },
   {
     title: "Resume Builder",
-    type: "Frontend Tool",
+    type: "FullStack Tool",
     href: "https://resume-creater.vercel.app/",
     description:
       "A beginner-friendly resume creator focused on quick editing and clear output.",
@@ -48,7 +48,7 @@ const projects = [
   },
   {
     title: "Weather App",
-    type: "Frontend Utility",
+    type: "FullStack Utility",
     href: "https://mui-site.vercel.app/",
     description:
       "A straightforward weather app that delivers current conditions with a clean design, with data from the OpenWeatherMap API.",
@@ -56,10 +56,10 @@ const projects = [
   },
   {
     title: "Todo App",
-    type: "Frontend App",
+    type: "FullStack App",
     href: "https://class-based-todo.netlify.app",
     description: "A simple todo app built with a class-based React approach.",
-    tags: ["React", "JavaScript", "Frontend", "Material UI"],
+    tags: ["React", "JavaScript", "FullStack", "Material UI"],
   },
 ];
 
@@ -126,8 +126,7 @@ const certificates = [
   "NCC C Certificate",
 ];
 
-const internship = [
-];
+const internship = [];
 
 function ExternalLink({ href, children, className = "" }) {
   return (
@@ -140,77 +139,87 @@ function ExternalLink({ href, children, className = "" }) {
 function App() {
   useEffect(() => {
     const created = [];
-    const siteUrl = window?.location?.origin || '';
-    const title = 'Abhijeet Singh Rana — Electrical Engineer & Frontend Developer';
-    const description = 'Diploma holder in Electrical Engineering with practical EV platform training and React frontend experience. Open to electrical, IT and frontend roles.';
+    const siteUrl = window?.location?.origin || "";
+    const title =
+      "Abhijeet Singh Rana — Electrical Engineer & FullStack Developer";
+    const description =
+      "Diploma holder in Electrical Engineering with practical EV platform training and NodeJS Fullstack experience. Open to electrical, IT and FullStack roles.";
 
     document.title = title;
 
     const createMeta = (attrName, attrValue, content) => {
-      const m = document.createElement('meta');
+      const m = document.createElement("meta");
       m.setAttribute(attrName, attrValue);
       m.content = content;
-      m.dataset.generatedBy = 'seo-script';
+      m.dataset.generatedBy = "seo-script";
       document.head.appendChild(m);
       created.push(m);
       return m;
     };
 
     // Basic meta
-    createMeta('name', 'description', description);
-    createMeta('name', 'robots', 'index,follow');
-    createMeta('name', 'keywords', 'Electrical Engineer, Frontend Developer, React, Tailwind, EV, Substation');
+    createMeta("name", "description", description);
+    createMeta("name", "robots", "index,follow");
+    createMeta(
+      "name",
+      "keywords",
+      "Electrical Engineer, FullStack Developer, React, Tailwind, NodeJS, NextJS, Typescript, MongoDB EV, Substation",
+    );
 
     // Open Graph
-    createMeta('property', 'og:title', title);
-    createMeta('property', 'og:description', description);
-    createMeta('property', 'og:type', 'website');
-    createMeta('property', 'og:url', siteUrl + window.location.pathname);
-    createMeta('property', 'og:image', siteUrl + '/imgs/profile_2.png');
+    createMeta("property", "og:title", title);
+    createMeta("property", "og:description", description);
+    createMeta("property", "og:type", "website");
+    createMeta("property", "og:url", siteUrl + window.location.pathname);
+    createMeta("property", "og:image", siteUrl + "/imgs/profile_2.png");
 
     // Twitter card
-    createMeta('name', 'twitter:card', 'summary_large_image');
-    createMeta('name', 'twitter:title', title);
-    createMeta('name', 'twitter:description', description);
+    createMeta("name", "twitter:card", "summary_large_image");
+    createMeta("name", "twitter:title", title);
+    createMeta("name", "twitter:description", description);
 
     // canonical link
-    const link = document.createElement('link');
-    link.rel = 'canonical';
+    const link = document.createElement("link");
+    link.rel = "canonical";
     link.href = siteUrl + window.location.pathname;
-    link.dataset.generatedBy = 'seo-script';
+    link.dataset.generatedBy = "seo-script";
     document.head.appendChild(link);
     created.push(link);
 
     // JSON-LD structured data (Person + simple workExperience)
     const jsonLd = {
-      '@context': 'https://schema.org',
-      '@type': 'Person',
-      name: 'Abhijeet Singh Rana',
-      jobTitle: 'Electrical Engineer & Frontend Developer',
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Abhijeet Singh Rana",
+      jobTitle: "Electrical Engineer & FullStack Developer",
       url: siteUrl,
       sameAs: [
-        'https://linkedin.com/in/abhijeet-singh-rana-178a4623a',
-        'https://github.com/abhi-1288',
+        "https://linkedin.com/in/abhijeet-singh-rana-178a4623a",
+        "https://github.com/abhi-1288",
       ],
       worksFor: {
-        '@type': 'Organization',
-        name: internship && internship.length > 0 ? internship[0].split(' at ')[1] || 'Uttarakhand Power Corporation Limited' : 'Independent',
+        "@type": "Organization",
+        name:
+          internship && internship.length > 0
+            ? internship[0].split(" at ")[1] ||
+              "Uttarakhand Power Corporation Limited"
+            : "Independent",
       },
       description,
       knowsAbout: skills,
-      alumniOf: 'Govt. Polytechnic College',
+      alumniOf: "Govt. Polytechnic College",
       workExperience: experience.map((e) => ({
-        '@type': 'Role',
+        "@type": "Role",
         roleName: e.role,
         startDate: e.time,
-        employer: { '@type': 'Organization', name: e.org },
+        employer: { "@type": "Organization", name: e.org },
       })),
     };
 
-    const ld = document.createElement('script');
-    ld.type = 'application/ld+json';
+    const ld = document.createElement("script");
+    ld.type = "application/ld+json";
     ld.text = JSON.stringify(jsonLd);
-    ld.dataset.generatedBy = 'seo-script';
+    ld.dataset.generatedBy = "seo-script";
     document.head.appendChild(ld);
     created.push(ld);
 
@@ -254,7 +263,7 @@ function App() {
           <div className="flex flex-col justify-center">
             <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm text-white/70">
               <span className="h-2 w-2 rounded-full bg-[#54d17a]" />
-              Electrical Engineer + Frontend Developer
+              Electrical Engineer + FullStack Developer
             </div>
             <h1 className="max-w-4xl font-display text-5xl leading-[0.96] md:text-7xl">
               I build useful digital tools with an engineer&apos;s eye for
@@ -282,7 +291,7 @@ function App() {
             </div>
           </div>
 
-          <div className="relative min-h-[430px] overflow-visible md:min-h-[500px]">
+          <div className="relative flex flex-col items-center md:block min-h-[580px] md:min-h-[500px]">
             {/* Animated Background Shape */}
             <div
               className="
@@ -334,23 +343,29 @@ function App() {
             {/* Floating Card */}
             <div
               className="
-      absolute left-0 top-4 z-20
-      max-w-[280px]
-      rounded-[28px]
-      border border-[#17211f]/10
-      bg-white
-      px-6 py-5
-      text-[#17211f]
-      shadow-2xl
-      md:left-2 md:top-8
-    "
+    relative z-20
+    w-full max-w-[320px]
+    mb-6
+
+    rounded-[28px]
+    border border-[#17211f]/10
+    bg-white
+    px-6 py-5
+    text-[#17211f]
+    shadow-2xl
+
+    md:absolute
+    md:left-2
+    md:top-8
+    md:mb-0
+  "
             >
               <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#e04d2f]">
                 Currently thinking
               </p>
 
               <h3 className="mt-3 text-2xl font-bold leading-tight">
-                Open to Electrical, IT, and frontend roles.
+                Open to Electrical, IT, and FullStack roles.
               </h3>
 
               <span className="absolute -bottom-5 right-16 h-6 w-6 rounded-full bg-white shadow-lg" />
@@ -475,7 +490,7 @@ function App() {
               Selected Projects
             </p>
             <h2 className="mt-3 font-display text-4xl md:text-5xl">
-              Apps that show the frontend side.
+              Apps that show the FullStack side.
             </h2>
           </div>
           <ExternalLink
@@ -525,7 +540,9 @@ function App() {
       </section>
 
       <section className="bg-white px-5 py-16 md:px-8 md:py-24">
-        <div className={`mx-auto grid max-w-7xl gap-10 ${internship && internship.length > 0 ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
+        <div
+          className={`mx-auto grid max-w-7xl gap-10 ${internship && internship.length > 0 ? "md:grid-cols-3" : "md:grid-cols-2"}`}
+        >
           <div className="rounded-lg border border-[#17211f]/12 p-6">
             <FiAward className="text-3xl text-[#e04d2f]" aria-hidden="true" />
             <h2 className="mt-4 font-display text-4xl">Education</h2>
@@ -546,7 +563,10 @@ function App() {
           </div>
           {internship && internship.length > 0 && (
             <div className="rounded-lg border border-[#17211f]/12 p-6">
-              <FiBriefcase className="text-3xl text-[#e04d2f]" aria-hidden="true" />
+              <FiBriefcase
+                className="text-3xl text-[#e04d2f]"
+                aria-hidden="true"
+              />
               <h2 className="mt-4 font-display text-4xl">Internship</h2>
               <ul className="mt-6 list-disc list-inside space-y-3 text-[#17211f]/70 marker:text-blue-500">
                 {internship.map((item) => (
