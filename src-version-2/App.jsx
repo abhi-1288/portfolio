@@ -40,7 +40,7 @@ const projects = [
   },
   {
     title: "Resume Builder",
-    type: "FullStack Tool",
+    type: "Frontend Tool",
     href: "https://resume-creater.vercel.app/",
     description:
       "A beginner-friendly resume creator focused on quick editing and clear output.",
@@ -48,7 +48,7 @@ const projects = [
   },
   {
     title: "Weather App",
-    type: "FullStack Utility",
+    type: "Frontend Utility",
     href: "https://mui-site.vercel.app/",
     description:
       "A straightforward weather app that delivers current conditions with a clean design, with data from the OpenWeatherMap API.",
@@ -56,10 +56,10 @@ const projects = [
   },
   {
     title: "Todo App",
-    type: "FullStack App",
+    type: "Frontend App",
     href: "https://class-based-todo.netlify.app",
     description: "A simple todo app built with a class-based React approach.",
-    tags: ["React", "JavaScript", "FullStack", "Material UI"],
+    tags: ["React", "JavaScript", "Frontend", "Material UI"],
   },
 ];
 
@@ -67,6 +67,7 @@ const skills = [
   "Power-BI",
   "Microsoft Office suites",
   "React",
+  "NextJS",
   "JavaScript",
   "HTML",
   "CSS",
