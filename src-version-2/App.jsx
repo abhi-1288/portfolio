@@ -248,7 +248,7 @@ function App() {
             </a>
           </div>
           <a
-            href="/imgs/abhijeet-profile.pdf"
+            href="/imgs/abhijeet_electrical_fullstack.pdf"
             download
             className="inline-flex h-11 items-center gap-2 rounded-full bg-white px-4 text-sm font-semibold text-[#17211f] transition hover:bg-[#f2c94c]"
           >
